@@ -1,3 +1,12 @@
 [submodule "vim/vim.symlink/bundle/Command-T"]
 	path = vim/vim.symlink/bundle/Command-T
 	url = git://github.com/wincent/Command-T.git
+[submodule "vim/vim.symlink/bundle/vim-vroom"]
+	path = vim/vim.symlink/bundle/vim-vroom
+	url = git://github.com/skalnik/vim-vroom.git
+[submodule "vim/vim.symlink/vim-coffee-script"]
+	path = vim/vim.symlink/vim-coffee-script
+	url = https://github.com/kchmck/vim-coffee-script.git
+[submodule "vim/vim.symlink/vim-rspec"]
+	path = vim/vim.symlink/vim-rspec
+	url = git://github.com/skwp/vim-rspec.git

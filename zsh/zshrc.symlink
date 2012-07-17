@@ -38,7 +38,7 @@ source $ZSH/oh-my-zsh.sh
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/Cellar/ruby/1.9.2-p290/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
 
 alias ls='ls -l'
-alias m='mvim'
+alias m='vim'
 alias r='rails'
 alias h='heroku'
 alias g='git'
@@ -85,4 +85,4 @@ web () {
 
 # Set Terminal
 export TERM=xterm-color
-export EDITOR='mvim -f'
+export EDITOR='vim -f'
