@@ -42,7 +42,10 @@ map <leader>t :CommandT<cr>
 map <leader>t<cr> :CommandT<cr>
 map <leader>t<leader> :CommandT<cr>
 map <leader>r<cr> :VroomRunTestFile<cr>
+map <leader>r<leader> :VroomRunTestFile<cr>
 map <leader>R<cr> :VroomRunNearestTest<cr>
+
+map :ack :Ack
 
 map <Left> <Nop>
 map <Right> <Nop>
