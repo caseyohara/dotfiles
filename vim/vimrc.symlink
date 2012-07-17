@@ -1,8 +1,7 @@
 call pathogen#infect()
 call pathogen#helptags()
-colorscheme caseyohara
-let mapleader=","
 
+let mapleader=","
 syntax on
 set number
 set nocompatible
@@ -38,14 +37,13 @@ set wildmode=longest,list
 set wildmenu
 set clipboard=unnamed
 
-map <Leader>t<cr> <D-t>
+map <Leader>t<cr> :CommandT<cr>
 map <leader>r<cr> :VroomRunTestFile<cr>
 map <leader>R<cr> :VroomRunNearestTest<cr>
 
 :au Filetype html,xml,xsl source ~/.vim/scripts/closetag.vim
 filetype plugin indent on
 autocmd FileType ruby,haml,eruby,yaml,html,javascript,sass,cucumber set ai sw=2 sts=2 et
-
 
 :set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
 nnoremap <c-j> <c-w>j
