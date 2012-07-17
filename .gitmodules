@@ -10,3 +10,6 @@
 [submodule "vim/vim.symlink/vim-rspec"]
 	path = vim/vim.symlink/vim-rspec
 	url = git://github.com/skwp/vim-rspec.git
+[submodule "vim/vim.symlink/bundle/vim-rails"]
+	path = vim/vim.symlink/bundle/vim-rails
+	url = git://github.com/tpope/vim-rails.git
