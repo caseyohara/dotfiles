@@ -12,7 +12,6 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set autoindent
-set laststatus=2
 set showmatch
 set incsearch
 set hlsearch
@@ -22,7 +21,7 @@ set cmdheight=2
 set switchbuf=useopen
 set numberwidth=5
 set showtabline=2
-set winwidth=79
+set winwidth=100
 set shell=zsh
 set t_ti= t_te=
 set scrolloff=3
@@ -31,34 +30,41 @@ set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set backspace=indent,eol,start
 set showcmd
+set go-=L
 set guioptions-=T
 set guioptions-=r
 set wildmode=longest,list
 set wildmenu
 set clipboard=unnamed
+set laststatus=2
 set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
 
-map <leader>t :CommandT<cr>
-map <leader>t<cr> :CommandT<cr>
-map <leader>t<leader> :CommandT<cr>
-map <leader>r<cr> :VroomRunTestFile<cr>
-map <leader>r<leader> :VroomRunTestFile<cr>
-map <leader>R<cr> :VroomRunNearestTest<cr>
 
-map :ack :Ack
+map <leader>t :CommandT<cr>
+map <leader>r<cr> :VroomRunTestFile<cr>
+map <leader>R<cr> :VroomRunNearestTest<cr>
 
 map <Left> <Nop>
 map <Right> <Nop>
 map <Up> <Nop>
 map <Down> <Nop>
 
+" Map ctrl+j/k/h/l for split pane navigation
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
+
+" leader leader to switch
 nnoremap <leader><leader> <c-^>
 imap <c-l> <space>=><space>
 imap <c-c> <esc>
+
+" Auto-close braces
+inoremap {      {}<Left>
+inoremap {<CR>  {<CR>}<Esc>O
+inoremap {{     {
+inoremap {}     {}
 
 function! MapCR()
   nnoremap <cr> :nohlsearch<cr>
@@ -66,8 +72,40 @@ endfunction
 call MapCR()
 
 filetype plugin indent on
-autocmd FileType ruby,haml,eruby,yaml,html,javascript,sass,cucumber set ai sw=2 sts=2 et
+autocmd FileType ruby,haml,eruby,yaml,html,javascript,sass,less,cucumber set ai sw=2 sts=2 et
 au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
+au BufNewFile,BufRead *.master set filetype=html
+au BufNewFile,BufRead,BufReadPost *.less set filetype=less
+
+highlight ExtraWhitespace ctermbg=red guibg=red
+au ColorScheme * highlight ExtraWhitespace guibg=red
+au BufEnter * match ExtraWhitespace /\s\+$/
+au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+au InsertLeave * match ExtraWhiteSpace /\s\+$/
+
+" Remove trailing whitespace
+function! Ws()
+  :%s/\s\+$//e
+endfunction
+" map Ws() to a key
+map <leader>w :call Ws()<cr>
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" MULTIPURPOSE TAB KEY
+" Indent if we're at the beginning of a line. Else, do completion.
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! InsertTabWrapper()
+    let col = col('.') - 1
+    if !col || getline('.')[col - 1] !~ '\k'
+        return "\<tab>"
+    else
+        return "\<c-p>"
+    endif
+endfunction
+inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+inoremap <s-tab> <c-n>
+
 
 colorscheme ir_black
 set guifont=mplus-1m-regular:h12
@@ -94,6 +132,9 @@ highlight DiffAdd term=reverse cterm=bold ctermbg=lightgreen ctermfg=16
 highlight DiffChange term=reverse cterm=bold ctermbg=lightblue ctermfg=16
 highlight DiffText term=reverse cterm=bold ctermbg=lightgray ctermfg=16
 highlight DiffDelete term=reverse cterm=bold ctermbg=lightred ctermfg=16
-
 highlight PmenuSel ctermfg=16 ctermbg=156
+
+
+
+
 

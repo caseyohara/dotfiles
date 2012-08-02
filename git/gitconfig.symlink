@@ -1,7 +1,18 @@
-[user] 
-name = Casey O'Hara
-email = casey.ohara@imulus.com 
+[user]
+  name = Casey O'Hara
+  email = casey.ohara@imulus.com
+
 [color]
 	ui = true
+
 [core]
 	editor = mvim -f
+
+[alias]
+    aa = add --all
+    co = checkout
+    ci = commit
+    st = status
+    di = diff
+    dc = diff --cached
+    amend = commit --amend
