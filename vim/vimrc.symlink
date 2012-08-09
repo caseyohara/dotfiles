@@ -62,10 +62,10 @@ imap <c-l> <space>=><space>
 imap <c-c> <esc>
 
 " Auto-close braces
-inoremap {      {}<Left>
-inoremap {<CR>  {<CR>}<Esc>O
-inoremap {{     {
-inoremap {}     {}
+"inoremap {      {}<Left>
+"inoremap {<CR>  {<CR>}<Esc>O
+"inoremap {{     {
+"inoremap {}     {}
 
 function! MapCR()
   nnoremap <cr> :nohlsearch<cr>
