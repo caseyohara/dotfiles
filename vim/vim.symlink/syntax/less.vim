@@ -66,8 +66,6 @@ hi def link lessComment Comment
 "hi def link lessOperator Operator
 
 
-inoremap : : ;<Left>
-
 let b:current_syntax = "less"
 
 " 1.0

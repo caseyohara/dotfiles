@@ -42,8 +42,6 @@ set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
 :command W w
 
 map <leader>t :CommandT<cr>
-map <leader>r<cr> :VroomRunTestFile<cr>
-map <leader>R<cr> :VroomRunNearestTest<cr>
 
 map <Left> <Nop>
 map <Right> <Nop>
@@ -60,6 +58,8 @@ nnoremap <c-l> <c-w>l
 nnoremap <leader><leader> <c-^>
 imap <c-l> <space>=><space>
 imap <c-c> <esc>
+imap <log><tab> console.log()<Left>
+
 
 " Auto-close braces
 "inoremap {      {}<Left>
@@ -110,6 +110,8 @@ endfunction
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 inoremap <s-tab> <c-n>
 
+" ctrl-tag for line completion
+inoremap <c-tab> <c-x><c-l>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " PROMOTE VARIABLE TO RSPEC LET

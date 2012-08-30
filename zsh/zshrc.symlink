@@ -34,9 +34,6 @@ plugins=(rails ruby git textmate)
 source $ZSH/oh-my-zsh.sh
 # unsetopt correct_all
 
-# Customize to your needs...
-export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/Cellar/ruby/1.9.2-p290/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
-
 alias ls='ls -l'
 alias m='mvim'
 alias r='rails'
@@ -86,3 +83,16 @@ web () {
 # Set Terminal
 export TERM=xterm-color
 export EDITOR='vim -f'
+
+# Customize to your needs...
+export PATH=\
+/usr/local/bin:\
+/usr/local/sbin:\
+/usr/local/mysql/bin:\
+/usr/local/Cellar/ruby/1.9.2-p290/bin:\
+/usr/bin:\
+/bin:\
+/usr/sbin:\
+/sbin:\
+/usr/X11/bin\
+
