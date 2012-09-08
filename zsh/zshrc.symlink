@@ -48,6 +48,7 @@ alias prx='cd ~/Projects/GitHub/Imulus/printreleaf/'
 alias sd2='ssh IMULUS\\casey.ohara@icodev2.imulus.local'
 alias js='node'
 alias guard='guard -c'
+alias db='cd ~/DropBox'
 
 # Functions
 # ===========================================================================
