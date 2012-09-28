@@ -41,14 +41,18 @@ alias h='heroku'
 alias g='git'
 alias gh='cd ~/Projects/GitHub/'
 alias ghi='cd ~/Projects/GitHub/Imulus'
+alias ghc='cd ~/Projects/GitHub/caseyohara'
 alias mx='m assets/ masterpages/ usercontrols/ xslt/'
 alias ds='cd ~/Desktop'
 alias nomnom='cd ~/Projects/GitHub/Imulus/NomNom/'
 alias prx='cd ~/Projects/GitHub/Imulus/printreleaf/'
 alias sd2='ssh IMULUS\\casey.ohara@icodev2.imulus.local'
+alias sci='ssh IMULUS\\casey.ohara@icoci1.imulus.local'
 alias js='node'
 alias guard='guard -c'
 alias db='cd ~/DropBox'
+alias rpry="rails-console-pry -r pry-doc -r awesome_print"
+
 
 # Functions
 # ===========================================================================
@@ -84,6 +88,7 @@ web () {
 # Set Terminal
 export TERM=xterm-color
 export EDITOR='vim -f'
+export GOROOT='/usr/local/go'
 
 # Customize to your needs...
 export PATH=\
@@ -95,5 +100,6 @@ export PATH=\
 /bin:\
 /usr/sbin:\
 /sbin:\
-/usr/X11/bin\
+/usr/X11/bin:\
+/usr/local/go/bin\
 

@@ -18,6 +18,7 @@ hi Visual           guifg=NONE        guibg=#262D51     gui=NONE      ctermfg=NO
 
 hi Error            guifg=#FFFF00     guibg=#FF0000     gui=BOLD      ctermfg=16       ctermbg=red         cterm=NONE     guisp=#FF6C60 " undercurl color
 hi ErrorMsg         guifg=white       guibg=#FF6C60     gui=BOLD      ctermfg=16       ctermbg=red         cterm=NONE
+hi Error            guifg=#FF00FF     guibg=#FFFF00     gui=BOLD      ctermfg=16       ctermbg=red         cterm=NONE     guisp=#FF6C60 " undercurl color
 hi WarningMsg       guifg=white       guibg=#FF6C60     gui=BOLD      ctermfg=16       ctermbg=red         cterm=NONE
 hi SpellBad         guifg=white       guibg=#FF0000     gui=BOLD      ctermfg=16       ctermbg=160         cterm=NONE
 
@@ -34,10 +35,6 @@ let g:syntastic_enable_signs=1
 let g:syntastic_quiet_warnings=0
 let g:syntastic_auto_loc_list=2
 
-"let g:syntastic_error_symbol='>>'
-"let g:syntastic_warning_symbol='>>'
-"let g:syntastic_error_symbol='✗'
-"let g:syntastic_warning_symbol='⚠'
 let g:syntastic_error_symbol='>>'
-let g:syntastic_warning_symbol='!!'
+let g:syntastic_warning_symbol='>>'
 
