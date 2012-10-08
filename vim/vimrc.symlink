@@ -3,6 +3,7 @@ call pathogen#helptags()
 
 let mapleader=","
 syntax on
+set vb
 set number
 set nocompatible
 set hidden
@@ -62,8 +63,7 @@ nnoremap <c-l> <c-w>l
 nnoremap <leader><leader> <c-^>
 imap <c-l> <space>=><space>
 imap <c-c> <esc>
-imap <log><tab> console.log()<Left>
-
+imap log<tab> console.log()<Left>
 
 " Auto-close braces
 "inoremap {      {}<Left>
