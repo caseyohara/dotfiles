@@ -14,7 +14,9 @@ hi StatusLineNC ctermbg=black ctermfg=lightgrey
 hi VertSplit ctermbg=black ctermfg=lightgrey
 hi LineNr ctermfg=darkgray
 
-hi CursorLine       guifg=NONE        guibg=#121212     gui=NONE      ctermfg=NONE        ctermbg=234
+hi Normal           guibg=#121212
+hi NonText          guibg=#121212
+hi CursorLine       guifg=NONE        guibg=#232323     gui=NONE      ctermfg=NONE        ctermbg=234
 hi Function         guifg=#FFD2A7     guibg=NONE        gui=NONE      ctermfg=yellow       ctermbg=NONE        cterm=NONE
 hi Visual           guifg=NONE        guibg=#322677     gui=NONE      ctermfg=NONE        ctermbg=236    cterm=NONE
 
@@ -26,6 +28,10 @@ hi SpellBad         guifg=white       guibg=#FF0000     gui=BOLD      ctermfg=16
 
 " ir_black doesn't highlight operators for some reason
 hi Operator        guifg=#6699CC     guibg=NONE        gui=NONE      ctermfg=lightblue   ctermbg=NONE        cterm=NONE
+
+" Don't underline anchor elements in HTML
+highlight link htmlLink text
+
 
 highlight DiffAdd term=reverse cterm=bold ctermbg=lightgreen ctermfg=16
 highlight DiffChange term=reverse cterm=bold ctermbg=lightblue ctermfg=16
