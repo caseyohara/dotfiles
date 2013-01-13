@@ -16,9 +16,11 @@ hi LineNr ctermfg=darkgray
 
 hi Normal           guibg=#121212
 hi NonText          guibg=#121212
-hi CursorLine       guifg=NONE        guibg=#232323     gui=NONE      ctermfg=NONE        ctermbg=234
-hi Function         guifg=#FFD2A7     guibg=NONE        gui=NONE      ctermfg=yellow       ctermbg=NONE        cterm=NONE
-hi Visual           guifg=NONE        guibg=#322677     gui=NONE      ctermfg=NONE        ctermbg=236    cterm=NONE
+hi Cursor           guifg=white       guibg=#FF4731
+hi iCursor          guifg=white       guibg=#FF4731
+hi CursorLine       guifg=NONE        guibg=#333339     gui=NONE      ctermfg=NONE        ctermbg=234
+hi Function         guifg=#FFD2A7     guibg=NONE        gui=NONE      ctermfg=yellow      ctermbg=NONE     cterm=NONE
+hi Visual           guifg=NONE        guibg=#322677     gui=NONE      ctermfg=NONE        ctermbg=236      cterm=NONE
 
 hi Error            guifg=#FFFF00     guibg=#FF0000     gui=BOLD      ctermfg=16       ctermbg=red         cterm=NONE     guisp=#FF6C60 " undercurl color
 hi ErrorMsg         guifg=white       guibg=#FF6C60     gui=BOLD      ctermfg=16       ctermbg=red         cterm=NONE
