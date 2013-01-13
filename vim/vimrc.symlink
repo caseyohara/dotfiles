@@ -45,7 +45,7 @@ set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
 :set background=dark
 :color caseyohara
 
-:command W w
+:command! W w
 
 map <leader>t :CommandT<cr>
 
