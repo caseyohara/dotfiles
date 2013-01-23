@@ -54,7 +54,7 @@ alias js='node'
 alias guard='guard -c'
 alias db='cd ~/DropBox'
 alias rpry="rails-console-pry -r pry-doc -r awesome_print"
-
+alias server="http-server"
 
 # Functions
 # ===========================================================================
