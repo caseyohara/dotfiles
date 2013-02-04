@@ -34,58 +34,20 @@ plugins=(rails ruby git textmate)
 source $ZSH/oh-my-zsh.sh
 # unsetopt correct_all
 
-alias ls='ls -l'
 alias m='mvim'
 alias r='rails'
-alias h='heroku'
-alias g='git'
+alias s='subl'
+alias ds='cd ~/Desktop'
+alias ls='ls -l'
 alias gh='cd ~/Projects/GitHub/'
 alias ghi='cd ~/Projects/GitHub/Imulus'
 alias ghc='cd ~/Projects/GitHub/caseyohara'
-alias mx='m assets/ masterpages/ usercontrols/ xslt/'
-alias ds='cd ~/Desktop'
-alias nomnom='cd ~/Projects/GitHub/Imulus/NomNom/'
-alias prx='cd ~/Projects/GitHub/Imulus/printreleaf/'
 alias sd2='ssh IMULUS\\casey.ohara@icodev2.imulus.local'
 alias sci='ssh IMULUS\\casey.ohara@icoci1.imulus.local'
 alias spw='ssh casey.ohara@priv-web1.dev2.corp.printfection.com'
 alias sp2='ssh casey.ohara@cfengine.dev2.corp.printfection.com'
-alias js='node'
 alias guard='guard -c'
-alias db='cd ~/DropBox'
-alias rpry="rails-console-pry -r pry-doc -r awesome_print"
 alias server="http-server"
-
-# Functions
-# ===========================================================================
-
-work () {
-  if [ ! -d "/Volumes/Work/" ]; then
-    echo "Connecting ..."
-    osascript -e "try" -e "mount volume \"smb://CASEYOHARA-PC/Work\"" -e "end try"
-  fi	
-  cd '/Volumes/Work/'
-}
-
-# Connect to the development server
-dev2 () {
-  if [ ! -d "/Volumes/Developer-Environments/Casey-OHara/" ]; then
-    echo "Connecting ..."
-    osascript -e "try" -e "mount volume \"smb://casey.ohara@192.168.5.23/\"" -e "end try"
-  fi
-}
-
-# Browse to dev folder, connect if necessary
-dev () {
-  dev2
-  cd '/Volumes/Developer-Environments/Casey-OHara/'
-}
-
-# Browse to websites folder, connect if necessary
-web () {
-  dev2
-  cd '/Volumes/Websites/'
-}
 
 # Set Terminal
 export TERM=xterm-256color
