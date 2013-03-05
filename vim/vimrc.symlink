@@ -3,6 +3,7 @@ call pathogen#helptags()
 
 let mapleader=","
 syntax on
+syntax enable
 set vb
 set number
 set nocompatible
@@ -79,12 +80,14 @@ endfunction
 call MapCR()
 
 filetype plugin indent on
-autocmd FileType ruby,haml,eruby,yaml,html,javascript,sass,less,cucumber set ai sw=2 sts=2 et
+autocmd FileType ruby,haml,eruby,yaml,html,javascript,coffeescript,css,markdown,sass,less,cucumber set ai sw=2 sts=2 et
 au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
 au BufNewFile,BufRead *.master set filetype=html
 au BufNewFile,BufRead *.cshtml set filetype=html
 au BufNewFile,BufRead,BufReadPost *.less set filetype=less
 au BufNewFile,BufRead *.go set filetype=go syntax=go
+au BufNewFile,BufRead *.md set filetype=markdown
+au BufNewFile,BufRead *.ts set filetype=typescript
 
 highlight ExtraWhitespace ctermbg=red guibg=red
 au ColorScheme * highlight ExtraWhitespace guibg=red
