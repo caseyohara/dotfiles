@@ -68,6 +68,10 @@ imap <c-l> <space>=><space>
 imap <c-c> <esc>
 imap log<tab> console.log()<Left>
 
+
+" <space> to exec macro
+:nnoremap <Space> @q
+
 " Auto-close braces
 "inoremap {      {}<Left>
 "inoremap {<CR>  {<CR>}<Esc>O
