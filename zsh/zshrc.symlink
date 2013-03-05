@@ -56,10 +56,10 @@ export GOROOT='/usr/local/go'
 
 # Customize to your needs...
 export PATH=\
+$HOME/.rbenv/bin:\
 /usr/local/bin:\
 /usr/local/sbin:\
 /usr/local/mysql/bin:\
-/usr/local/Cellar/ruby/1.9.2-p290/bin:\
 /usr/bin:\
 /bin:\
 /usr/sbin:\
@@ -67,3 +67,4 @@ export PATH=\
 /usr/X11/bin:\
 /usr/local/go/bin\
 
+eval "$(rbenv init -)"
