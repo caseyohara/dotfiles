@@ -2,7 +2,7 @@
 --smart-case
 --follow
 
---type-add=ruby=rake,haml
+--type-add=ruby=rake,haml,rabl
 --type-add=vim=vimrc
 --type-add=js=json
 --type-set=coffeescript=.coffee
