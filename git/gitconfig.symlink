@@ -8,6 +8,9 @@
 [core]
 	editor = vim -f
 
+[merge]
+	conflictstyle = diff3
+
 [alias]
     aa = add --all
     co = checkout
@@ -31,3 +34,4 @@
     ra = !git r --all
     l = "!source ~/.githelpers && pretty_git_log"
     la = !git l --all
+
