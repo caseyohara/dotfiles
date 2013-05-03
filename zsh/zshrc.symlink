@@ -8,8 +8,8 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="caseyohara"
 
 # Example aliases
-alias zshc="mate ~/.zshrc"
-alias omz="mate ~/.oh-my-zsh"
+alias zshc="m ~/.zshrc"
+alias omz="m ~/.oh-my-zsh"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -36,11 +36,10 @@ source $ZSH/oh-my-zsh.sh
 
 alias m='mvim'
 alias r='rails'
-alias s='subl'
 alias ds='cd ~/Desktop'
 alias ls='ls -l'
-alias gh='cd ~/Projects/GitHub/caseyohara'
-alias ghi='cd ~/Projects/GitHub/Imulus'
+alias gh='cd ~/code/github/caseyohara'
+alias ghi='gh'
 alias guard='guard -c'
 alias server="http-server"
 
