@@ -42,6 +42,7 @@ alias gh='cd ~/code/github/caseyohara'
 alias ghi='gh'
 alias guard='guard -c'
 alias server="http-server"
+alias vpn="~/.ssh/bin/vpn"
 
 # Set Terminal
 export TERM=xterm-256color
