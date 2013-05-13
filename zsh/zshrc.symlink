@@ -64,3 +64,5 @@ $HOME/.rbenv/bin:\
 /usr/local/go/bin\
 
 eval "$(rbenv init -)"
+ssh-add &> /dev/null
+
