@@ -10,6 +10,7 @@
 
 [merge]
 	conflictstyle = diff3
+	tool = opendiff
 
 [alias]
     aa = add --all
