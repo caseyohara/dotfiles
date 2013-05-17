@@ -44,7 +44,8 @@ alias guard='guard -c'
 alias server="http-server"
 alias vpn="~/.ssh/bin/vpn"
 alias marked="open -a /Applications/Marked.app"
-alias gif="gifify"
+alias gif="gifify -n"
+alias harvest="hcl"
 
 # Set Terminal
 export TERM=xterm-256color
