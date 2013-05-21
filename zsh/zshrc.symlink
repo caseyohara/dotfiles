@@ -35,10 +35,11 @@ source $ZSH/oh-my-zsh.sh
 # unsetopt correct_all
 
 alias m='mvim'
+alias s='subl'
 alias r='rails'
 alias ds='cd ~/Desktop'
 alias ls='ls -l'
-alias gh='cd ~/code/github/caseyohara'
+alias gh='cd ~/code/caseyohara'
 alias ghi='gh'
 alias guard='guard -c'
 alias server="http-server"
@@ -67,5 +68,4 @@ $HOME/.rbenv/bin:\
 /usr/local/go/bin\
 
 eval "$(rbenv init -)"
-ssh-add &> /dev/null
 
