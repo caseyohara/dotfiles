@@ -21,6 +21,7 @@ set hlsearch
 set ignorecase smartcase
 set cursorline
 set cmdheight=2
+set cmdwinheight=25
 set switchbuf=useopen
 set numberwidth=5
 set showtabline=2
@@ -70,6 +71,8 @@ imap <c-l> <space>=><space>
 imap <c-c> <esc>
 imap log<tab> console.log()<Left>
 
+" %% for directory of current file
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
 " <space> to exec macro
 :nnoremap <Space> @q
