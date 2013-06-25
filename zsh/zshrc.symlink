@@ -7,10 +7,6 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="caseyohara"
 
-# Example aliases
-alias zshc="m ~/.zshrc"
-alias omz="m ~/.oh-my-zsh"
-
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
@@ -29,7 +25,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(bundler rails ruby git textmate)
+plugins=(bundler rails ruby git)
 
 source $ZSH/oh-my-zsh.sh
 # unsetopt correct_all
@@ -39,14 +35,19 @@ alias s='subl'
 alias r='rails'
 alias ds='cd ~/Desktop'
 alias ls='ls -l'
+alias hb='hub browse'
 alias gh='cd ~/code/caseyohara'
 alias ghi='gh'
+alias json='prettyjson'
 alias guard='guard -c'
 alias server="http-server"
 alias vpn="~/.ssh/bin/vpn"
 alias marked="open -a /Applications/Marked.app"
 alias gif="gifify -n"
 alias harvest="hcl"
+alias zshc="m ~/.zshrc"
+alias omz="m ~/.oh-my-zsh"
+alias cuc='bundle exec cucumber -r features/support/ -r features/step_definitions/'
 
 # Set Terminal
 export TERM=xterm-256color
@@ -55,6 +56,7 @@ export GOROOT='/usr/local/go'
 
 # Customize to your needs...
 export PATH=\
+$HOME/code/captainu/subs/bin:\
 $HOME/.rbenv/bin:\
 /usr/local/share/npm/bin:\
 /usr/local/bin:\
@@ -68,4 +70,4 @@ $HOME/.rbenv/bin:\
 /usr/local/go/bin\
 
 eval "$(rbenv init -)"
-
+eval "$(cu init -)"
