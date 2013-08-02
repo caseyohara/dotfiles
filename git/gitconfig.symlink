@@ -22,6 +22,7 @@
     di = diff
     dc = diff --cached
     amend = commit --amend
+    pop = reset --soft HEAD^
 
     # Fancy logging.
     #   h = head
