@@ -44,7 +44,7 @@
 			<integer>1</integer>
 		</array>
 		<key>device ID</key>
-		<integer>203</integer>
+		<integer>215</integer>
 		<key>isCollapsed</key>
 		<false/>
 	</dict>
@@ -463,6 +463,10 @@
 					</array>
 					<array>
 						<string>superwub</string>
+						<false/>
+					</array>
+					<array>
+						<string>wub</string>
 						<false/>
 					</array>
 				</array>
