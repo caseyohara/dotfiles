@@ -51,7 +51,13 @@ set listchars=tab:▸\
 
 :command! W w
 
-map <leader>t :CommandT<cr>
+map <leader>t  :CommandT<cr>
+map <leader>ga :CommandT app/assets<cr>
+map <leader>gm :CommandT app/models<cr>
+map <leader>gc :CommandT app/controllers<cr>
+map <leader>gv :CommandT app/views<cr>
+map <leader>gl :CommandT lib<cr>
+map <leader>gr :CommandT spec<cr>
 
 "" airline settings
 " remove separators
