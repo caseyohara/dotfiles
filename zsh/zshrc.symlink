@@ -48,7 +48,7 @@ alias cloud="cloudapp"
 alias harvest="hcl"
 alias zshc="m ~/.zshrc"
 alias omz="m ~/.oh-my-zsh"
-alias cuc='bundle exec cucumber -r features/support/ -r features/step_definitions/ --format progress'
+alias cucumber='bundle exec cucumber FAILFAST=true -r features/support/ -r features/step_definitions/ --format progress'
 
 # Set Terminal
 export TERM=xterm-256color
