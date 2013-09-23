@@ -49,6 +49,7 @@ alias harvest="hcl"
 alias zshc="m ~/.zshrc"
 alias omz="m ~/.oh-my-zsh"
 alias cucumber='bundle exec cucumber FAILFAST=true -r features/support/ -r features/step_definitions/ --format progress'
+alias ag='ag --ignore-dir log'
 
 # Set Terminal
 export TERM=xterm-256color
