@@ -34,8 +34,6 @@ task :install do
     end
     `ln -s "$PWD/#{linkable}" "#{target}"`
   end
-
-  `ln -s "$PWD/chrome/Custom.css" "#{ENV['HOME']}/Library/Application\ Support/Google/Chrome/Default/User\ StyleSheets"`
 end
 
 task :uninstall do
