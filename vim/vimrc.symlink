@@ -5,6 +5,7 @@ let mapleader=","
 syntax on
 syntax enable
 set vb
+set nowrap
 set number
 set nocompatible
 set hidden
