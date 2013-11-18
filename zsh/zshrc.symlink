@@ -22,6 +22,8 @@ ZSH_THEME="caseyohara"
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
 
+DISABLE_CORRECTION="true"
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -33,10 +35,11 @@ source $ZSH/oh-my-zsh.sh
 alias m='mvim'
 alias s='subl'
 alias r='rails'
+alias vi='vim'
 alias ds='cd ~/Desktop'
 alias ls='ls -l'
 alias hb='hub browse'
-alias gh='cd ~/code/caseyohara'
+alias gh='cd ~/code'
 alias ghi='gh'
 alias guard='guard -c'
 alias server="http-server"
@@ -52,7 +55,7 @@ alias ag='ag --ignore-dir log'
 
 # Set Terminal
 export TERM=xterm-256color
-export EDITOR='vim -f'
+export EDITOR='/usr/local/bin/vim'
 export GOROOT='/usr/local/go'
 
 # Customize to your needs...
