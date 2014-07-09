@@ -1,17 +1,17 @@
 [user]
   name = Casey O'Hara
-  email = caseyo@caseyohara.com
+  email = casey.ohara@me.com
 
 [color]
-	ui = true
+  ui = true
 
 [core]
-	editor = vim -f
-	trustctime = false
+  editor = vim -f
+  trustctime = false
 
 [merge]
-	conflictstyle = diff3
-	tool = opendiff
+  conflictstyle = diff3
+  tool = opendiff
 
 [alias]
     aa = add --all
@@ -40,4 +40,4 @@
     la = !git l --all
 
 [push]
-	default = matching
+  default = matching
