@@ -60,22 +60,10 @@ map <leader>gv :CommandT app/views<cr>
 map <leader>gl :CommandT lib<cr>
 map <leader>gr :CommandT spec<cr>
 
-"" airline settings
-" remove separators
-let g:airline_left_sep=''
-let g:airline_right_sep=''
-" remove unused modes
-let g:airline_enable_fugitive=0
-let g:airline_enable_syntastic=1
-" set second section to filename
-let g:airline_section_b="%f"
-" empty third and fourth sections
-let g:airline_section_c=""
-let g:airline_section_x=""
-" put filetype in fifth section
-let g:airline_section_y="%Y"
-let g:airline_theme='dark'
-
+nmap <leader>a= :Tab /=<CR>
+vmap <leader>a= :Tab /=<CR>
+nmap <leader>a: :Tab /:\zs<CR>
+vmap <leader>a: :Tab /:\zs<CR>
 
 map <Left> <Nop>
 map <Right> <Nop>
@@ -117,6 +105,7 @@ au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
 au BufNewFile,BufRead *.master set filetype=html
 au BufNewFile,BufRead *.cshtml set filetype=html
 au BufNewFile,BufRead,BufReadPost *.less set filetype=less
+au BufNewFile,BufReadPost *.go setl ai expandtab nolist noet ci pi sts=0 sw=4 ts=4
 au BufNewFile,BufRead *.go set filetype=go syntax=go
 au BufNewFile,BufRead *.md set filetype=markdown
 au BufNewFile,BufRead *.ts set filetype=typescript
