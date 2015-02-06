@@ -52,7 +52,7 @@ set listchars=tab:▸\
 
 :command! W w
 
-map <leader>t  :CommandT<cr>
+map <leader>t  :CommandTFlush<cr>:CommandT<cr>
 map <leader>ga :CommandT app/assets<cr>
 map <leader>gm :CommandT app/models<cr>
 map <leader>gc :CommandT app/controllers<cr>
@@ -159,7 +159,19 @@ endfunction
 :map <leader>p :PromoteToLet<cr>
 
 
+" adds to statusline
+"set laststatus=2
+"set statusline+=%{synIDattr(synID(line('.'),col('.'),1),'name')}
 
+" a little more informative version of the above
+nmap <Leader>si :call <SID>SynStack()<CR>
+
+function! <SID>SynStack()
+    if !exists("*synstack")
+        return
+    endif
+    echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
 
 
 

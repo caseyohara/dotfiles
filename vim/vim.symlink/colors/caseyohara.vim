@@ -1,4 +1,4 @@
-"runtime colors/Tomorrow-Night.vim
+"runtime colors/Tomorrow-Night-Eighties.vim
 runtime colors/ir_black.vim
 
 let g:colors_name = "caseyohara"
@@ -28,11 +28,15 @@ hi Error            guifg=#FF00FF     guibg=#FFFF00     gui=BOLD      ctermfg=16
 hi WarningMsg       guifg=white       guibg=#FF6C60     gui=BOLD      ctermfg=16       ctermbg=red         cterm=NONE
 hi SpellBad         guifg=white       guibg=#FF0000     gui=BOLD      ctermfg=16       ctermbg=160         cterm=NONE
 
+hi MatchParen       guifg=#f6f3e8     guibg=#857bbf     gui=BOLD      ctermfg=white       ctermbg=darkgray    cterm=NONE
+
 " ir_black doesn't highlight operators for some reason
 hi Operator        guifg=#6699CC     guibg=NONE        gui=NONE      ctermfg=lightblue   ctermbg=NONE        cterm=NONE
 
 " Don't underline anchor elements in HTML
 highlight link htmlLink text
+highlight Type ctermfg=14 guifg=#EEEEA6
+highlight rubyStringDelimiter ctermfg=10 guifg=#A8FF60
 
 
 highlight DiffAdd term=reverse cterm=bold ctermbg=lightgreen ctermfg=16
