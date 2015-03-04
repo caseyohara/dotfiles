@@ -109,6 +109,7 @@ au BufNewFile,BufReadPost *.go setl ai expandtab nolist noet ci pi sts=0 sw=4 ts
 au BufNewFile,BufRead *.go set filetype=go syntax=go
 au BufNewFile,BufRead *.md set filetype=markdown
 au BufNewFile,BufRead *.ts set filetype=typescript
+au BufNewFile,BufRead Vagrantfile set filetype=ruby
 
 highlight ExtraWhitespace ctermbg=darkred guibg=#ff0000
 au ColorScheme * highlight ExtraWhitespace guibg=red
