@@ -1,8 +1,14 @@
+# Path to your oh-my-zsh installation.
+export ZSH=/Users/caseyohara/.oh-my-zsh
+
+ZSH_THEME="robbyrussell"
 HISTFILE=~/.history
 HISTSIZE=10000
 SAVEHIST=10000
 COMPLETION_WAITING_DOTS="true"
 
+plugins=(git)
+source $ZSH/oh-my-zsh.sh
 source ~/.secrets
 
 alias m='mvim'
