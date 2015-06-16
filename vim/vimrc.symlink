@@ -40,6 +40,7 @@ set guioptions-=T
 set guioptions-=r
 set wildmode=longest,list
 set wildmenu
+set wildignore+=tmp,tmp/*,./tmp,./tmp/*,.DS_Store,*/.DS_Store,vendor
 set clipboard=unnamed
 set laststatus=2
 set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
@@ -101,15 +102,15 @@ call MapCR()
 
 filetype plugin indent on
 autocmd FileType ruby,haml,eruby,yaml,html,javascript,coffeescript,css,markdown,sass,less,cucumber set ai sw=2 sts=2 et
-au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
-au BufNewFile,BufRead *.master set filetype=html
-au BufNewFile,BufRead *.cshtml set filetype=html
 au BufNewFile,BufRead,BufReadPost *.less set filetype=less
 au BufNewFile,BufReadPost *.go setl ai expandtab nolist noet ci pi sts=0 sw=4 ts=4
 au BufNewFile,BufRead *.go set filetype=go syntax=go
 au BufNewFile,BufRead *.md set filetype=markdown
-au BufNewFile,BufRead *.ts set filetype=typescript
 au BufNewFile,BufRead Vagrantfile set filetype=ruby
+augroup SmartyHTML
+  autocmd!
+  autocmd Filetype smarty set filetype=smarty.html
+augroup END
 
 highlight ExtraWhitespace ctermbg=darkred guibg=#ff0000
 au ColorScheme * highlight ExtraWhitespace guibg=red
@@ -173,6 +174,5 @@ function! <SID>SynStack()
     endif
     echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
-
 
 

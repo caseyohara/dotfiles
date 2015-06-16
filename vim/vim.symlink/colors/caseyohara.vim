@@ -1,12 +1,9 @@
-"runtime colors/Tomorrow-Night-Eighties.vim
 runtime colors/ir_black.vim
 
 let g:colors_name = "caseyohara"
 
 "set guifont=mplus-1m-regular:h12
 set guifont=Inconsolata-g:h12
-
-hi link coffeeSpaceError NONE
 
 hi Comment ctermfg=darkgray
 hi StatusLine ctermbg=darkgrey ctermfg=white
