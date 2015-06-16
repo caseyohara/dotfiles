@@ -3,27 +3,31 @@ HISTSIZE=10000
 SAVEHIST=10000
 COMPLETION_WAITING_DOTS="true"
 
+source ~/.secrets
+
 alias m='mvim'
+alias r='rails'
 alias vi='vim'
 alias ds='cd ~/Desktop'
-alias ls='ls -l'
+alias ls='ls -la'
 alias hb='hub browse'
-alias gh='cd ~/code'
-alias ghi='gh'
-alias vpn="~/.ssh/bin/vpn"
-alias marked="open -a /Applications/Marked.app"
+alias server="http-server"
+alias marked="open -a /Applications/Marked\ 2.app"
 alias gif="gifify -n"
-alias cloud="cloudapp"
 alias ag='ag --ignore-dir log'
+alias speedtest='wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip'
 
 # Set Terminal
 export TERM=xterm-256color
 export EDITOR='/usr/local/bin/vim'
-export GOROOT='/usr/local/go'
-export GOPATH=$HOME/go
+export GOPATH=$HOME/code/go
+export DOCKER_TLS_VERIFY=1
+export DOCKER_HOST=tcp://192.168.59.103:2376
+export DOCKER_CERT_PATH=/Users/caseyohara/.boot2docker/certs/boot2docker-vm
 
 # Customize to your needs...
 export PATH=\
+./bin:\
 $HOME/.rbenv/bin:\
 /usr/local/share/npm/bin:\
 /usr/local/bin:\
@@ -37,5 +41,5 @@ $HOME/.rbenv/bin:\
 $GOPATH/bin\
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-export PATH="./bin:$PATH"
+eval "$($HOME/.prx/bin/prx init -)"
 
