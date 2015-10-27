@@ -81,7 +81,6 @@ nnoremap <c-l> <c-w>l
 nnoremap <leader><leader> <c-^>
 imap <c-l> <space>=><space>
 imap <c-c> <esc>
-imap log<tab> console.log()<Left>
 
 " %% for directory of current file
 cnoremap %% <C-R>=expand('%:h').'/'<cr>

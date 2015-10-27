@@ -1,7 +1,13 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/caseyohara/.oh-my-zsh
 
-ZSH_THEME="robbyrussell"
+# Masterrace
+bindkey -v
+# Shorten key delay for <ESC> key in zsh's vi mode
+export KEYTIMEOUT=1
+
+
+ZSH_THEME="caseyohara"
 HISTFILE=~/.history
 HISTSIZE=10000
 SAVEHIST=10000
@@ -34,6 +40,7 @@ export DOCKER_CERT_PATH=/Users/caseyohara/.boot2docker/certs/boot2docker-vm
 # Customize to your needs...
 export PATH=\
 ./bin:\
+$HOME/bin:\
 $HOME/.rbenv/bin:\
 /usr/local/share/npm/bin:\
 /usr/local/bin:\
@@ -48,4 +55,8 @@ $GOPATH/bin\
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 eval "$($HOME/.prx/bin/prx init -)"
+eval "$(/Users/caseyohara/code/pf/cli/bin/pf init -)"
 
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
