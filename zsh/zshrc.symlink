@@ -55,8 +55,11 @@ $GOPATH/bin\
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 eval "$($HOME/.prx/bin/prx init -)"
-eval "$(/Users/caseyohara/code/pf/cli/bin/pf init -)"
-
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+# Add Postgres.app CLI tools
+# https://postgresapp.com/documentation/cli-tools.html
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
+
