@@ -53,23 +53,14 @@ set listchars=tab:▸\
 
 :command! W w
 
-map <leader>t  :CommandTFlush<cr>:CommandT<cr>
-map <leader>ga :CommandT app/assets<cr>
-map <leader>gm :CommandT app/models<cr>
-map <leader>gc :CommandT app/controllers<cr>
-map <leader>gv :CommandT app/views<cr>
-map <leader>gl :CommandT lib<cr>
-map <leader>gr :CommandT spec<cr>
+" Flush CommandT when opening
+map <leader>t :CommandTFlush<cr>:CommandT<cr>
 
-nmap <leader>a= :Tab /=<CR>
-vmap <leader>a= :Tab /=<CR>
-nmap <leader>a: :Tab /:\zs<CR>
-vmap <leader>a: :Tab /:\zs<CR>
-
-map <Left> <Nop>
+" Disable left/right/up/down keys
+map <Left>  <Nop>
 map <Right> <Nop>
-map <Up> <Nop>
-map <Down> <Nop>
+map <Up>    <Nop>
+map <Down>  <Nop>
 
 " Map ctrl+j/k/h/l for split pane navigation
 nnoremap <c-j> <c-w>j
@@ -88,12 +79,7 @@ cnoremap %% <C-R>=expand('%:h').'/'<cr>
 " <space> to exec macro
 :nnoremap <Space> @q
 
-" Auto-close braces
-"inoremap {      {}<Left>
-"inoremap {<CR>  {<CR>}<Esc>O
-"inoremap {{     {
-"inoremap {}     {}
-
+" Make hlsearch more reasonable
 function! MapCR()
   nnoremap <cr> :nohlsearch<cr>
 endfunction
@@ -105,12 +91,15 @@ au BufNewFile,BufRead,BufReadPost *.less set filetype=less
 au BufNewFile,BufReadPost *.go setl ai expandtab nolist noet ci pi sts=0 sw=4 ts=4
 au BufNewFile,BufRead *.go set filetype=go syntax=go
 au BufNewFile,BufRead *.md set filetype=markdown
+au BufNewFile,BufRead .env.* set filetype=config
 au BufNewFile,BufRead Vagrantfile set filetype=ruby
+autocmd BufNewFile,BufRead *.sql setf pgsql
 augroup SmartyHTML
   autocmd!
   autocmd Filetype smarty set filetype=smarty.html
 augroup END
 
+" Highlight trailing whitespace
 highlight ExtraWhitespace ctermbg=darkred guibg=#ff0000
 au ColorScheme * highlight ExtraWhitespace guibg=red
 au BufEnter * match ExtraWhitespace /\s\+$/
@@ -124,7 +113,6 @@ function! StripTrailingWhitespaces()
   %s/\s\+$//e
   call cursor(l, c)
 endfunction
-
 map <leader>w :call StripTrailingWhitespaces()<cr>
 
 
