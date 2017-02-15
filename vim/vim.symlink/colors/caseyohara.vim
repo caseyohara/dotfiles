@@ -35,6 +35,7 @@ highlight link htmlLink text
 highlight Type ctermfg=14 guifg=#EEEEA6
 highlight rubyStringDelimiter ctermfg=10 guifg=#A8FF60
 
+highlight rubyContract ctermfg=16 guifg=#CC7777
 
 highlight DiffAdd term=reverse cterm=bold ctermbg=lightgreen ctermfg=16
 highlight DiffChange term=reverse cterm=bold ctermbg=lightblue ctermfg=16
