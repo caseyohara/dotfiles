@@ -40,7 +40,7 @@ set guioptions-=T
 set guioptions-=r
 set wildmode=longest,list
 set wildmenu
-set wildignore+=tmp,tmp/*,./tmp,./tmp/*,.DS_Store,*/.DS_Store,vendor
+set wildignore+=tmp,tmp/*,./tmp,./tmp/*,.DS_Store,*/.DS_Store,vendor,**/node_modules
 set clipboard=unnamed
 set laststatus=2
 set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
