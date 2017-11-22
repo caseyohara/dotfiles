@@ -40,7 +40,7 @@ set guioptions-=T
 set guioptions-=r
 set wildmode=longest,list
 set wildmenu
-set wildignore+=tmp,tmp/*,./tmp,./tmp/*,.DS_Store,*/.DS_Store,vendor,**/node_modules
+set wildignore+=tmp,tmp/*,./tmp,./tmp/*,.DS_Store,*/.DS_Store,./vendor,**/node_modules
 set clipboard=unnamed
 set laststatus=2
 set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
@@ -91,6 +91,7 @@ au BufNewFile,BufRead,BufReadPost *.less set filetype=less
 au BufNewFile,BufReadPost *.go setl ai expandtab nolist noet ci pi sts=0 sw=4 ts=4
 au BufNewFile,BufRead *.go set filetype=go syntax=go
 au BufNewFile,BufRead *.md set filetype=markdown
+au BufNewFile,BufRead *.todo set filetype=todo
 au BufNewFile,BufRead .env.* set filetype=config
 au BufNewFile,BufRead Vagrantfile set filetype=ruby
 autocmd BufNewFile,BufRead *_spec.rb set syntax=rspec

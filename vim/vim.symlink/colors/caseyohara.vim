@@ -38,6 +38,11 @@ highlight rubyStringDelimiter ctermfg=10 guifg=#A8FF60
 " Highlight Ruby contracts
 highlight rubyContract ctermfg=16 guifg=#CC7777
 
+" Highlight Todos
+highlight todoTodo ctermfg=16 guifg=#CC7777
+highlight todoDone ctermfg=16 guifg=#77CC77
+highlight todoIdea ctermfg=16 guifg=#3377CC
+
 highlight DiffAdd term=reverse cterm=bold ctermbg=lightgreen ctermfg=16
 highlight DiffChange term=reverse cterm=bold ctermbg=lightblue ctermfg=16
 highlight DiffText term=reverse cterm=bold ctermbg=lightgray ctermfg=16
