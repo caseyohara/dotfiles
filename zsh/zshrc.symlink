@@ -15,7 +15,6 @@ COMPLETION_WAITING_DOTS="true"
 
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
-source ~/.secrets
 
 alias m='mvim'
 alias r='rails'
