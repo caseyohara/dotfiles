@@ -8,10 +8,11 @@
 [core]
   editor = vim -f
   trustctime = false
+  pager = less -F -X
 
 [merge]
   conflictstyle = diff3
-  tool = opendiff
+	tool = opendiff
 
 [alias]
     aa = add --all
