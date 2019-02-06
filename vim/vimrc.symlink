@@ -47,6 +47,9 @@ set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
 set list
 set listchars=tab:▸\ 
 
+"A don't give the 'ATTENTION' message when an existing swap file is found.
+set shortmess+=A
+
 :set t_Co=256
 :set background=dark
 :color caseyohara
@@ -55,6 +58,9 @@ set listchars=tab:▸\
 
 " Flush CommandT when opening
 map <leader>t :CommandTFlush<cr>:CommandT<cr>
+
+" CommandT uses Vim's pwd as root (ie. attempts no traversal up the tree to find a .git dir)
+let g:CommandTTraverseSCM="pwd"
 
 " Disable left/right/up/down keys
 map <Left>  <Nop>
