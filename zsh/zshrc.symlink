@@ -58,7 +58,9 @@ eval "$($HOME/.prx/bin/prx init -)"
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-# Add Postgres.app CLI tools
-# https://postgresapp.com/documentation/cli-tools.html
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
+export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
+
+# For Ruby servers
+# https://blog.phusion.nl/2017/10/13/why-ruby-app-servers-break-on-macos-high-sierra-and-what-can-be-done-about-it/
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 
