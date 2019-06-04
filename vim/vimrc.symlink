@@ -102,6 +102,7 @@ au BufNewFile,BufRead *.todo set filetype=todo
 au BufNewFile,BufRead .env.* set filetype=config
 au BufNewFile,BufRead Vagrantfile set filetype=ruby
 au BufNewFile,BufRead *.nginx.conf set filetype=nginx
+au BufNewFile,BufRead *.service set filetype=dosini
 autocmd BufNewFile,BufRead *_spec.rb set syntax=rspec
 autocmd BufNewFile,BufRead *.sql setf pgsql
 let g:sql_type_default = 'pgsql'
