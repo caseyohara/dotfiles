@@ -36,6 +36,28 @@ export DOCKER_TLS_VERIFY=1
 export DOCKER_HOST=tcp://192.168.59.103:2376
 export DOCKER_CERT_PATH=/Users/caseyohara/.boot2docker/certs/boot2docker-vm
 
+# Exports a function because ZSH can only export strings
+function exportf (){
+  export $(echo $1)="`whence -f $1 | sed -e "s/$1 //" `"
+}
+
+export STASH_PATH=$HOME/Stash
+# $ stash <file>
+# Moves a timestamped file to ~/Stash
+function stash() {
+  file="$1"
+  if [ -z "$file" ]; then
+    echo "No file specified"
+    return 1
+  fi
+  mkdir -p $STASH_PATH
+  basefile=$file:t
+  ts=`date +%Y%m%dT%H%M%S`
+  target="$STASH_PATH/$ts-$basefile"
+  mv $file $target
+}
+exportf stash
+
 # Customize to your needs...
 export PATH=\
 ./bin:\
