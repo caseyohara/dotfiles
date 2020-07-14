@@ -18,12 +18,16 @@
     aa = add --all
     co = checkout
     ci = commit
+    cp = cherry-pick
     st = status
     d = diff
     di = diff
     dc = diff --cached
     amend = commit --amend
     pop = reset --soft HEAD^
+    squash = rebase -i HEAD~
+    unstage = reset HEAD
+    us = unstage
 
     # Fancy logging.
     #   h = head
