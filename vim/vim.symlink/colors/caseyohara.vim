@@ -42,6 +42,7 @@ highlight rubyContract ctermfg=16 guifg=#CC7777
 " Highlight Todos
 highlight todoTodo ctermfg=16 guifg=#CC7777
 highlight todoDone ctermfg=16 guifg=#77CC77
+highlight todoTask ctermfg=16 guifg=#FF6600
 highlight todoIdea ctermfg=16 guifg=#3377CC
 highlight todoNote ctermfg=16 guifg=#CC77CC
 highlight todoOpen ctermfg=16 guifg=#7777CC
