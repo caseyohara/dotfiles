@@ -36,8 +36,13 @@ highlight link htmlLink text
 highlight Type ctermfg=14 guifg=#EEEEA6
 highlight rubyStringDelimiter ctermfg=10 guifg=#A8FF60
 
+
+" Change Ruby boolean color to light purple to differentiate from teal symbols
+highlight rubyBoolean ctermfg=16 guifg=#CC99FF
+
 " Highlight Ruby contracts
 highlight rubyContract ctermfg=16 guifg=#CC7777
+
 
 " Highlight Todos
 highlight todoTodo ctermfg=16 guifg=#CC7777
