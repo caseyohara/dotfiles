@@ -104,6 +104,29 @@ function stash() {
 }
 exportf stash
 
+function dlv() {
+  url="$1"
+  echo $url
+  formats=$(youtube-dl -F $url)
+
+  if echo $formats | grep -q -e "^22"; then
+    echo "Downloading format 22..."
+    youtube-dl -f 22 $url
+    echo "Done."
+    return 0
+  elif echo $formats | grep -q -e "^18"; then
+    echo "Downloading format 18..."
+    youtube-dl -f 18 $url
+    echo "Done."
+    return 0
+  else
+    echo "Suitable format not found."
+    return 1
+  fi
+}
+exportf dlv
+
+
 # Customize to your needs...
 export PATH=\
 ./bin:\
