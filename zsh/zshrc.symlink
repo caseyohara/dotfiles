@@ -107,16 +107,16 @@ exportf stash
 function dlv() {
   url="$1"
   echo $url
-  formats=$(youtube-dl -F $url)
+  formats=$(yt-dlp -F $url)
 
   if echo $formats | grep -q -e "^22"; then
     echo "Downloading format 22..."
-    youtube-dl -f 22 $url
+    yt-dlp -f 22 $url
     echo "Done."
     return 0
   elif echo $formats | grep -q -e "^18"; then
     echo "Downloading format 18..."
-    youtube-dl -f 18 $url
+    yt-dlp -f 18 $url
     echo "Done."
     return 0
   else
@@ -125,6 +125,25 @@ function dlv() {
   fi
 }
 exportf dlv
+
+function slv() {
+  url="$1"
+  pattern="$2"
+
+  # second parameter was not passed
+  if [ -z "$pattern" ]; then
+    pattern='mp4'
+  fi
+
+  echo "URL: $url"
+  echo "PAT: $pattern"
+
+  results=$(yt-dlp -F $url | grep -e $pattern)
+
+  echo $results
+  return 0
+}
+exportf slv
 
 
 # Customize to your needs...
