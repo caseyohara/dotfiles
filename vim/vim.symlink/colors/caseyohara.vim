@@ -45,13 +45,18 @@ highlight rubyContract ctermfg=16 guifg=#CC7777
 
 
 " Highlight Todos
-highlight todoTodo ctermfg=16 guifg=#CC7777
-highlight todoDone ctermfg=16 guifg=#77CC77
-highlight todoTask ctermfg=16 guifg=#FF6600
-highlight todoIdea ctermfg=16 guifg=#3377CC
-highlight todoNote ctermfg=16 guifg=#CC77CC
-highlight todoOpen ctermfg=16 guifg=#7777CC
-highlight todoPunt ctermfg=16 guifg=#FFA500
+" https://codeyarns.com/tech/2011-07-29-vim-chart-of-color-names.html
+
+highlight todoTodo ctermfg=16 guifg=IndianRed2
+highlight todoDone ctermfg=16 guifg=SpringGreen1
+highlight todoHold ctermfg=16 guifg=DeepPink1
+highlight todoIdea ctermfg=16 guifg=yellow2
+highlight todoItem ctermfg=16 guifg=LavenderBlush3
+highlight todoList ctermfg=16 guifg=cyan4
+highlight todoNote ctermfg=16 guifg=NavajoWhite3
+highlight todoOpen ctermfg=16 guifg=CornflowerBlue
+highlight todoPunt ctermfg=16 guifg=thistle4
+highlight todoTask ctermfg=16 guifg=coral1
 
 highlight DiffAdd term=reverse cterm=bold ctermbg=lightgreen ctermfg=16
 highlight DiffChange term=reverse cterm=bold ctermbg=lightblue ctermfg=16
