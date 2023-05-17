@@ -1,4 +1,9 @@
-require 'irb/ext/save-history'
+require "irb/ext/save-history"
 IRB.conf[:SAVE_HISTORY] = 200
-IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb-history"
+IRB.conf[:HISTORY_FILE] = "#{ENV["HOME"]}/.irb-history"
 
+local_irbrc = File.join(pwd, ".irbrc")
+if File.exist?(local_irbrc) && local_irbrc != __FILE__
+  puts "Loading local .irbrc file '#{local_irbrc}'..."
+  load local_irbrc
+end
