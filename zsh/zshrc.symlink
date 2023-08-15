@@ -146,6 +146,11 @@ function slv() {
 }
 exportf slv
 
+function cleardns() {
+  sudo dscacheutil -flushcache
+  sudo killall -HUP mDNSResponder
+}
+exportf cleardns
 
 # Customize to your needs...
 export PATH=\
