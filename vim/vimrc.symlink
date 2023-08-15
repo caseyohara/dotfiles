@@ -143,7 +143,7 @@ endfunction
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 inoremap <s-tab> <c-n>
 
-" ctrl-tag for line completion
+" ctrl-tab for line completion
 inoremap <c-tab> <c-x><c-l>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
