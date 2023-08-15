@@ -1,0 +1,14 @@
+set -e
+set -x
+
+sudo rm -r ~/.vim/bundle/command-t
+git clone https://github.com/wincent/command-t.git ~/.vim/bundle/command-t
+cd ~/.vim/bundle/command-t
+git co c797e8b76155e24ebdf180cef28e1a409604492e
+cd ~/.vim/bundle/command-t/ruby/command-t/ext/command-t
+/usr/local/opt/ruby@3.2/bin/ruby -v
+/usr/local/opt/ruby@3.2/bin/ruby extconf.rb
+make
+brew uninstall macvim
+brew install macvim
+
