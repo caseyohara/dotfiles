@@ -17,6 +17,7 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 alias m='mvim'
+alias rbm='rubymine'
 alias r='rails'
 alias vi='vim'
 alias ds='cd ~/Desktop'
