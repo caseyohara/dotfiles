@@ -12,46 +12,47 @@
 
 [merge]
   conflictstyle = diff3
-	tool = opendiff
+  tool = opendiff
 
 [alias]
-    aa = add --all
-    co = checkout
-    ci = commit
-    cp = cherry-pick
-    st = status
-    d = diff
-    di = diff
-    dc = diff --cached
-    amend = commit --amend
-    pop = reset --soft HEAD^
-    squash = rebase -i HEAD~
-    unstage = reset HEAD
-    us = unstage
-
-    # Fancy logging.
-    #   h = head
-    #   hp = head with patch
-    #   r = recent commits, only current branch
-    #   ra = recent commits, all reachable refs
-    #   l = all commits, only current branch
-    #   la = all commits, all reachable refs
-    head = !git l -1
-    h = !git head
-    hp = "!source ~/.githelpers && show_git_head"
-    r = !git l -30
-    ra = !git r --all
-    l = "!source ~/.githelpers && pretty_git_log"
-    la = !git l --all
-    ss = !git stash show -p stash@{0}
+  aa = add --all
+  co = checkout
+  cp = cherry-pick
+  d = diff
+  dc = diff --cached
+  amend = commit --amend
+  # Pops the last commit back onto the stage
+  pop = reset --soft HEAD^
+  squash = rebase -i HEAD~
+  # Show stash
+  ss = !git stash show -p stash@{0}
+  unstage = restore --staged
+  # Removes local branches that don't exist on the remote
+  gone = "!f() { git fetch --all --prune; git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D; }; f"
+  # Lists branches by date descending
+  lb = !git reflog show --pretty=format:'%gs ~ %gd' --date=relative | grep 'checkout:' | grep -oE '[^ ]+ ~ .*' | awk -F~ '!seen[$1]++' | head -n 64 | awk -F' ~ HEAD@{' '{printf(\"  \\033[33m%s: \\033[37m %s\\033[0m\\n\", substr($2, 1, length($2)-1), $1)}'
+  # Fancy logging.
+  #   h = head
+  #   hp = head with patch
+  #   r = recent commits, only current branch
+  #   ra = recent commits, all reachable refs
+  #   l = all commits, only current branch
+  #   la = all commits, all reachable refs
+  head = !git l -1
+  h = !git head
+  hp = "!source ~/.githelpers && show_git_head"
+  r = !git l -30
+  ra = !git r --all
+  l = "!source ~/.githelpers && pretty_git_log"
+  la = !git l --all
 
 [push]
   default = matching
 [filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
-	required = true
+  clean = git-lfs clean %f
+  smudge = git-lfs smudge %f
+  required = true
 [init]
-	defaultBranch = main
+  defaultBranch = main
 [pull]
-	ff = only
+  ff = only
