@@ -1,0 +1,68 @@
+#!/usr/bin/env bash
+
+function stash() {
+  if [ "$STASH_DIR" = "" ]; then
+    echo "STASH_DIR not defined"
+    return 1
+  fi
+
+  mkdir -p $STASH_DIR
+
+  command="$1"
+  file="$2"
+  type=""
+  ts=`date +%Y%m%dT%H%M%S`
+
+  if [ -z "$command" ]; then
+    echo "Usage:"
+    echo "$ stash <file>     Alias for $ stash mv <file>"
+    echo "$ stash mv <file>  Move <file> to $STASH_DIR"
+    echo "$ stash cp <file>  Copy <file> to $STASH_DIR"
+    echo "$ stash dir        Prints $STASH_DIR"
+    echo "$ stash list       List files in $STASH_DIR"
+    echo "$ stash open       Open $STASH_DIR"
+    return 1
+  fi
+
+  if [ "$command" = "dir" ]; then
+    echo $STASH_DIR
+    return 0
+  elif [ "$command" = "list" ]; then
+    /bin/ls -A1 $STASH_DIR | sort
+    return 0
+  elif [ "$command" = "open" ]; then
+    open $STASH_DIR
+    return 0
+  fi
+
+  # If a second parameter was not passed, assume mv
+  if [ -z "$file" ]; then
+    file=$1
+    command='mv'
+  fi
+
+  if [ -f "$file" ]; then
+    type='file'
+  elif [ -d "$file" ]; then
+    type='directory'
+  else
+    echo "stash: File not found: $file" >&2
+    return 1
+  fi
+
+  basefile=$file:t
+  target="$STASH_DIR/$ts-$basefile"
+
+  if [ "$command" = "mv" ]; then
+    mv $file $target
+    echo "stash: Moved $file to $target" >&2
+    return 0
+  elif [ "$command" = "cp" ]; then
+    cp -r $file $target
+    echo "stash: Copied $file to $target" >&2
+    return 0
+  else
+    echo "stash: '$command' is not a stash command" >&2
+    return 1
+  fi
+}

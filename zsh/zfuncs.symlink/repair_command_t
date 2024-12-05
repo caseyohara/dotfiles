@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+function repair_command_t() {
+  cd ~/.vim/bundle/command-t/ruby/command-t/ext/command-t
+  git checkout "5.0.5"
+  /usr/local/opt/ruby/bin/ruby extconf.rb
+  make
+}
