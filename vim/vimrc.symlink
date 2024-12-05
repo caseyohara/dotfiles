@@ -40,8 +40,17 @@ set guioptions-=T
 set guioptions-=r
 set wildmode=longest,list
 set wildmenu
-set wildignore+=tmp,tmp/*,./tmp,./tmp/*,.DS_Store,*/.DS_Store,./vendor,**/node_modules
-set wildignore+=*/node_modules/*
+
+set wildignore+=*.gif,*.jpg,*.jpeg,*.svg
+set wildignore+=*.xlsx,*.csv
+set wildignore+=*/node_modules/*,**/node_modules
+set wildignore+=app/assets/builds,./app/assets/builds,app/assets/builds/**/*,./app/assets/builds/**/*
+set wildignore+=*.db,*.rdb
+set wildignore+=./log
+set wildignore+=./vendor
+set wildignore+=.DS_Store,*/.DS_Store
+set wildignore+=tmp,tmp/*,./tmp,./tmp/*
+
 set clipboard=unnamed
 set laststatus=2
 set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
