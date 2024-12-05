@@ -1,41 +1,29 @@
-# Path to your oh-my-zsh installation.
-export ZSH=/Users/caseyohara/.oh-my-zsh
-
 # Masterrace
 bindkey -v
 # Shorten key delay for <ESC> key in zsh's vi mode
 export KEYTIMEOUT=1
 
-
-ZSH_THEME="caseyohara"
-HISTFILE=~/.history
-HISTSIZE=100000
-SAVEHIST=100000
-COMPLETION_WAITING_DOTS="true"
-
-plugins=(git)
-source $ZSH/oh-my-zsh.sh
-
-alias m='mvim'
-alias rbm='rubymine'
-alias r='rails'
-alias vi='vim'
-alias ds='cd ~/Desktop'
-alias ls='ls -la'
-alias hb='hub browse'
-alias server="http-server"
-alias marked="open -a /Applications/Marked\ 2.app"
-alias gif="gifify -n"
-alias ag='ag --ignore-dir log'
-alias speedtest='wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip'
-
 # Set Terminal
 export TERM=xterm-256color
 export EDITOR='/usr/local/bin/vim'
-export GOPATH=$HOME/code/go
-export DOCKER_TLS_VERIFY=1
-export DOCKER_HOST=tcp://192.168.59.103:2376
-export DOCKER_CERT_PATH=/Users/caseyohara/.boot2docker/certs/boot2docker-vm
+
+export ANSIBLE_VAULT_PASSWORD_FILE="keys/vault_pass"
+export HOMEBREW_NO_AUTO_UPDATE=1
+
+HISTFILE=~/.history
+HISTSIZE=100000
+SAVEHIST=100000
+
+alias ag='ag --ignore-dir log'
+alias ds='cd ~/Desktop'
+alias ggpull='git pull origin $(git rev-parse --abbrev-ref HEAD)'
+alias ggpush='git push origin $(git rev-parse --abbrev-ref HEAD)'
+alias ll='ls -lh'
+alias ls='ls -la'
+alias m='mvim'
+alias marked="open -a /Applications/Marked\ 2.app"
+alias server="http-server"
+alias vi='vim'
 
 # Exports a function because ZSH can only export strings
 function exportf (){
@@ -105,54 +93,14 @@ function stash() {
 }
 exportf stash
 
-function dlv() {
-  url="$1"
-  echo $url
-  formats=$(yt-dlp -F $url)
-
-  if echo $formats | grep -q -e "^22"; then
-    echo "Downloading format 22..."
-    yt-dlp -f 22 $url
-    echo "Done."
-    return 0
-  elif echo $formats | grep -q -e "^18"; then
-    echo "Downloading format 18..."
-    yt-dlp -f 18 $url
-    echo "Done."
-    return 0
-  else
-    echo "Suitable format not found."
-    return 1
-  fi
+function repair_command_t() {
+  cd ~/.vim/bundle/command-t/ruby/command-t/ext/command-t
+  git checkout "5.0.5"
+  /usr/local/opt/ruby/bin/ruby extconf.rb
+  make
 }
-exportf dlv
+exportf repair_command_t
 
-function slv() {
-  url="$1"
-  pattern="$2"
-
-  # second parameter was not passed
-  if [ -z "$pattern" ]; then
-    pattern='mp4'
-  fi
-
-  echo "URL: $url"
-  echo "PAT: $pattern"
-
-  results=$(yt-dlp -F $url | grep -e $pattern)
-
-  echo $results
-  return 0
-}
-exportf slv
-
-function cleardns() {
-  sudo dscacheutil -flushcache
-  sudo killall -HUP mDNSResponder
-}
-exportf cleardns
-
-# Customize to your needs...
 export PATH=\
 ./bin:\
 $HOME/bin:\
@@ -164,22 +112,20 @@ $HOME/.rbenv/bin:\
 /bin:\
 /usr/sbin:\
 /sbin:\
-/usr/X11/bin:\
-/usr/local/go/bin:\
-$GOPATH/bin\
-
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-eval "$($HOME/.prx/bin/prx init -)"
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+/usr/X11/bin\
 
 # Postgres.app
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 
+# Yarn
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# rbenv init
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+# prx init
+eval "$($HOME/.prx/bin/prx init -)"
+
 # For Ruby servers
 # https://blog.phusion.nl/2017/10/13/why-ruby-app-servers-break-on-macos-high-sierra-and-what-can-be-done-about-it/
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
-
-export PATH="/usr/local/opt/node@16/bin:$PATH"
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
