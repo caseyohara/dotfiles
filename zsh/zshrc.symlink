@@ -52,6 +52,7 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # Add custom functions to fpath
 export FPATH=~/.zfuncs:$FPATH
+autoload -U ~/.zfuncs/cleardns
 autoload -U ~/.zfuncs/repair_command_t
 autoload -U ~/.zfuncs/stash
 
