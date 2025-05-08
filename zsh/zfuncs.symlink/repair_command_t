@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 
 function repair_command_t() {
+  sudo rm -r ~/.vim/bundle/command-t
+  git clone https://github.com/wincent/command-t.git ~/.vim/bundle/command-t
   cd ~/.vim/bundle/command-t/ruby/command-t/ext/command-t
   git checkout "5.0.5"
-  /usr/local/opt/ruby/bin/ruby extconf.rb
+  /opt/homebrew/Cellar/ruby/3.4.3/bin/ruby extconf.rb
   make
 }

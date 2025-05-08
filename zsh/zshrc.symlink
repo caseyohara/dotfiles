@@ -5,7 +5,7 @@ export KEYTIMEOUT=1
 
 # Set Terminal
 export TERM=xterm-256color
-export EDITOR='/usr/local/bin/vim'
+export EDITOR='/opt/homebrew/bin/vim'
 
 export ANSIBLE_VAULT_PASSWORD_FILE="keys/vault_pass"
 export HOMEBREW_NO_AUTO_UPDATE=1
@@ -32,7 +32,6 @@ alias server="http-server"
 alias vi='vim'
 
 export PATH=\
-./bin:\
 $HOME/bin:\
 $HOME/.rbenv/bin:\
 /usr/local/share/npm/bin:\
@@ -56,9 +55,35 @@ autoload -U ~/.zfuncs/cleardns
 autoload -U ~/.zfuncs/repair_command_t
 autoload -U ~/.zfuncs/stash
 
+# homebrew init
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Add homebrew to path
+export PATH="/opt/homebrew/bin:$PATH"
+# node@22 is keg-only, which means it was not symlinked into /opt/homebrew
+export PATH="/opt/homebrew/opt/node@22/bin:$PATH"
+
 # rbenv init
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # prx init
 #eval "$($HOME/.prx/bin/prx init -)"
 export PATH="$HOME/.prx/bin:$PATH"
+
+# Prefer local ./bin dir
+export PATH="./bin:$PATH"
+
+# Enabling and setting git info var to be used in prompt config.
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' enable git svn
+# This line obtains information from the vcs.
+zstyle ':vcs_info:git*' formats "- (%b) "
+precmd() {
+    vcs_info
+}
+
+# Enable substitution in the prompt.
+setopt prompt_subst
+
+# Config for the prompt. PS1 synonym.
+prompt='%2/ ${vcs_info_msg_0_}> '
