@@ -85,5 +85,7 @@ precmd() {
 # Enable substitution in the prompt.
 setopt prompt_subst
 
-# Config for the prompt. PS1 synonym.
-prompt='%2/ ${vcs_info_msg_0_}> '
+# Enable starship prompt
+eval "$(starship init zsh)"
+
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh

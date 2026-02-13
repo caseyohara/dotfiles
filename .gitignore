@@ -1,2 +1,4 @@
 .DS_Store
 .netrwhist
+# 1password config
+config/config.symlink/op
